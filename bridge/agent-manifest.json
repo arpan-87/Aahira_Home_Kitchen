@@ -1,0 +1,10 @@
+{
+  "networks": [
+    {
+      "name": "aahira_kitchen"
+    }
+  ],
+  "actions": {
+    "version": 1
+  }
+}

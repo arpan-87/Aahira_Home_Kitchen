@@ -1,0 +1,9 @@
+# Security & Cross-Origin isolation headers for in-browser agent worker runtime
+/runtime/sandbox-worker.js
+  Cross-Origin-Embedder-Policy: require-corp
+  Cross-Origin-Opener-Policy: same-origin
+  Cache-Control: public, max-age=3600
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN

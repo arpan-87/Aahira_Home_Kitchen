@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aahira Home Kitchen | Open Agentic Website</title>
+  <meta name="description" content="Authentic homestyle Indian kitchen serving Punjabi, Tamil, Bengali and Indo-Chinese regional dishes in Carmel, Indiana. Built for The Open Agentic Web Challenge.">
+  <link rel="stylesheet" href="styles.css">
+  <script type="module" src="script.js"></script>
+  <script type="module" src="site.js"></script>
+</head>
+<body>
+
+  <!-- Demo Banner -->
+  <div id="demo-banner">
+    <div class="container">
+      <span class="banner-icon">ℹ</span>
+      <strong>Notice:</strong> Demo website (the kitchen is not open yet). Orders and subscriptions placed here run in demo mode.
+    </div>
+  </div>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand-wrap">
+        <div class="brand-logo-icon">🍲</div>
+        <div>
+          <a href="#" class="brand-name">Aahira Home Kitchen</a>
+          <div class="brand-tagline">Homestyle Regional Indian Cooking</div>
+        </div>
+      </div>
+
+      <nav class="site-nav" aria-label="Main navigation">
+        <a href="#about" class="nav-link" data-i18n="nav_about">About</a>
+        <a href="#menu" class="nav-link" data-i18n="nav_menu">Menu</a>
+        <a href="#cart" class="nav-link" data-i18n="nav_cart">Cart</a>
+        <a href="#subscribe" class="nav-link" data-i18n="nav_subscribe">Subscriptions</a>
+        <a href="#status" class="nav-link" data-i18n="nav_status">Track Order</a>
+        <a href="#assistant" class="nav-link" data-i18n="nav_assistant">Ask Aahira</a>
+        <a href="#contact" class="nav-link" data-i18n="nav_contact">Contact</a>
+      </nav>
+
+      <div class="lang-picker">
+        <select id="lang-select" aria-label="Select Language">
+          <option value="en">English</option>
+          <option value="hi">हिंदी (Hindi)</option>
+          <option value="es">Español</option>
+          <option value="zh">中文 (Chinese)</option>
+          <option value="bn">বাংলা (Bengali)</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-badges">
+        <span class="pill-badge" data-i18n="hero_badge_hours">⏰ Open 10:00 AM – 10:00 PM Daily</span>
+        <span class="pill-badge" data-i18n="hero_badge_free_delivery">🚚 Free Delivery on orders over $50</span>
+      </div>
+      <h1 data-i18n="hero_title">Authentic Indian Home Cooking in Carmel</h1>
+      <p data-i18n="hero_subtitle">Pure flavours of Punjab, Tamil Nadu, Bengal, and Indo-Chinese streets cooked fresh to order with stone-ground spices and pure ghee.</p>
+      <div class="hero-actions">
+        <a href="#menu" class="btn btn-primary" data-i18n="hero_btn_menu">Explore Menu</a>
+        <a href="#assistant" class="btn btn-secondary" data-i18n="hero_btn_assistant">Ask AI Assistant</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <h2 class="section-title" data-i18n="about_title">About Aahira Home Kitchen</h2>
+      <div class="about-grid">
+        <div class="about-card">
+          <h3 data-i18n="about_title">Our Story</h3>
+          <p id="about-story"></p>
+          <h3 data-i18n="about_mission_title" style="margin-top: 24px;">Our Mission</h3>
+          <p id="about-mission"></p>
+        </div>
+        <div class="about-card">
+          <h3 id="about-audience-title" data-i18n="about_audience_title">Who We Serve</h3>
+          <ul id="about-audience" class="feature-list"></ul>
+          <h3 id="about-values-title" data-i18n="about_values_title" style="margin-top: 24px;">Our Kitchen Promises</h3>
+          <ul id="about-values" class="feature-list"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu" class="menu-section">
+    <div class="container">
+      <h2 class="section-title" data-i18n="menu_title">Our Fresh Regional Menu</h2>
+      <p class="section-subtitle" data-i18n="menu_subtitle">Handcrafted dishes prepared in small daily batches. Filter by cuisine, meal course, or specific dietary requirements.</p>
+
+      <div class="menu-controls">
+        <div class="search-box">
+          <input type="text" id="menu-search" placeholder="Search dish, spice, or ingredient..." data-i18n-placeholder="filter_search_placeholder">
+        </div>
+
+        <div id="cuisine-tabs" class="cuisine-tabs">
+          <button class="cuisine-tab active" data-cuisine="all" data-i18n="cuisine_all">All Cuisines</button>
+          <button class="cuisine-tab" data-cuisine="Punjabi" data-i18n="cuisine_punjabi">Punjabi</button>
+          <button class="cuisine-tab" data-cuisine="Tamil" data-i18n="cuisine_tamil">Tamil</button>
+          <button class="cuisine-tab" data-cuisine="Bengali" data-i18n="cuisine_bengali">Bengali</button>
+          <button class="cuisine-tab" data-cuisine="Chinese" data-i18n="cuisine_chinese">Indo-Chinese</button>
+        </div>
+
+        <div id="category-chips" class="category-chips">
+          <button class="category-chip active" data-category="all" data-i18n="cat_all">All Courses</button>
+          <button class="category-chip" data-category="Appetizer" data-i18n="cat_appetizer">Appetizers</button>
+          <button class="category-chip" data-category="Lunch" data-i18n="cat_lunch">Lunch</button>
+          <button class="category-chip" data-category="Dinner" data-i18n="cat_dinner">Dinner</button>
+          <button class="category-chip" data-category="Soft Drink" data-i18n="cat_soft_drink">Soft Drinks</button>
+          <button class="category-chip" data-category="Hard Drink" data-i18n="cat_hard_drink">Hard Drinks (21+)</button>
+        </div>
+
+        <div class="diet-filters-wrap filters">
+          <div class="filter-heading" data-i18n="filter_title">Dietary & Allergen Preferences</div>
+          <div class="filter-checkboxes">
+            <label><input type="checkbox" id="filter-veg"><span data-i18n="filter_vegetarian">Vegetarian</span></label>
+            <label><input type="checkbox" id="filter-vegan"><span data-i18n="filter_vegan">Vegan</span></label>
+            <label><input type="checkbox" id="filter-nut-free"><span data-i18n="filter_nut_free">Nut-Free</span></label>
+            <label><input type="checkbox" id="filter-dairy-free"><span data-i18n="filter_dairy_free">Dairy-Free</span></label>
+            <label><input type="checkbox" id="filter-gluten-free"><span data-i18n="filter_gluten_free">Gluten-Free</span></label>
+            <label><input type="checkbox" id="filter-diabetic"><span data-i18n="filter_diabetic">Diabetic-Friendly</span></label>
+            <label><input type="checkbox" id="filter-high-protein"><span data-i18n="filter_high_protein">High-Protein</span></label>
+          </div>
+        </div>
+      </div>
+
+      <div id="menu-grid" class="menu-grid"></div>
+    </div>
+  </section>
+
+  <!-- Cart and Checkout Section -->
+  <section id="cart" class="cart-checkout-section">
+    <div class="container">
+      <h2 class="section-title" data-i18n="cart_title">Your Order Cart</h2>
+
+      <div class="cart-layout">
+        <!-- Cart Summary Column -->
+        <div class="cart-card">
+          <h3 data-i18n="cart_title">Cart Items</h3>
+          <div id="cart-lines"></div>
+
+          <div class="cart-totals-box">
+            <div class="total-row">
+              <span data-i18n="cart_subtotal">Subtotal:</span>
+              <span id="cart-subtotal">$0.00</span>
+            </div>
+            <div class="total-row">
+              <span data-i18n="cart_delivery_fee">Delivery Fee:</span>
+              <span id="cart-delivery-fee">$0.00</span>
+            </div>
+            <div class="total-row grand-total">
+              <span data-i18n="cart_total">Estimated Total:</span>
+              <span id="cart-total">$0.00</span>
+            </div>
+          </div>
+
+          <div id="cart-alcohol-warning" class="alcohol-alert-banner hidden">
+            ⚠️ <strong>Alcohol Notice:</strong> Your cart includes alcoholic drinks. Valid 21+ government photo ID is required at delivery/pickup.
+          </div>
+
+          <button id="btn-clear-cart" class="btn btn-secondary" style="width: 100%;" data-i18n="btn_clear_cart">Clear Cart</button>
+        </div>
+
+        <!-- Checkout Form Column -->
+        <div class="checkout-card">
+          <h3 data-i18n="checkout_title">Order Checkout</h3>
+          <form id="checkout-form">
+            <div id="co-error" class="error-banner hidden"></div>
+
+            <div class="form-group">
+              <label data-i18n="co_type_label">Fulfillment Option *</label>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <input type="radio" name="co-fulfillment" value="pickup" checked>
+                  <span data-i18n="co_type_pickup">Curbside Pickup (3017 Warren Way)</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="co-fulfillment" value="delivery">
+                  <span data-i18n="co_type_delivery">Local Delivery (+$4.99 or free over $50)</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="co-first-name" data-i18n="co_first_name">First Name *</label>
+                <input type="text" id="co-first-name" required maxlength="50">
+              </div>
+              <div class="form-group">
+                <label for="co-last-name" data-i18n="co_last_name">Last Name *</label>
+                <input type="text" id="co-last-name" required maxlength="50">
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="co-phone" data-i18n="co_phone">Phone Number *</label>
+                <input type="tel" id="co-phone" placeholder="e.g. 5707807680" required maxlength="15">
+              </div>
+              <div class="form-group">
+                <label for="co-email" data-i18n="co_email">Email (Optional)</label>
+                <input type="email" id="co-email" placeholder="name@example.com">
+              </div>
+            </div>
+
+            <!-- Delivery Address Fields (hidden when Pickup) -->
+            <div id="co-delivery-address-fields" class="hidden">
+              <div class="form-group">
+                <label for="co-street" data-i18n="co_street">Delivery Street Address *</label>
+                <input type="text" id="co-street" placeholder="123 Main St, Apt 4B">
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="co-city" data-i18n="co_city">City *</label>
+                  <input type="text" id="co-city" value="Carmel">
+                </div>
+                <div class="form-group">
+                  <label for="co-zip" data-i18n="co_zip">ZIP Code *</label>
+                  <input type="text" id="co-zip" value="46033" maxlength="5">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="co-date" data-i18n="co_date">Requested Date *</label>
+                <select id="co-date" required></select>
+              </div>
+              <div class="form-group">
+                <label for="co-time" data-i18n="co_time">Ready / Delivery Slot *</label>
+                <select id="co-time" required></select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label data-i18n="co_payment_label">Payment Method *</label>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <input type="radio" name="co-payment" value="Cash" checked>
+                  <span data-i18n="co_payment_cash">Cash</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="co-payment" value="Cheque">
+                  <span data-i18n="co_payment_cheque">Cheque</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="co-payment" value="Zelle">
+                  <span data-i18n="co_payment_zelle">Zelle</span>
+                </label>
+              </div>
+            </div>
+
+            <div id="co-alcohol-wrap" class="form-group hidden">
+              <label class="checkbox-label">
+                <input type="checkbox" id="co-alcohol-confirm">
+                <span data-i18n="co_alcohol_confirm">I confirm that I am at least 21 years of age and will show a valid photo ID upon receiving alcohol.</span>
+              </label>
+            </div>
+
+            <div class="form-group">
+              <label for="co-notes" data-i18n="co_notes">Special Cooking Instructions</label>
+              <textarea id="co-notes" rows="2" placeholder="e.g. mild spice, extra chutney, leave at doorstep"></textarea>
+            </div>
+
+            <button type="submit" id="co-submit-btn" class="btn btn-primary" style="width: 100%;" data-i18n="co_btn_place_order">Place Order</button>
+          </form>
+
+          <div id="co-confirmation" class="hidden"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Meal Subscriptions Section -->
+  <section id="subscribe" class="sub-plan-section">
+    <div class="container">
+      <h2 class="section-title" data-i18n="sub_title">Meal Tiffin Subscriptions</h2>
+      <p class="section-subtitle" data-i18n="sub_subtitle">Wholesome home-style meals scheduled right to your door. Save 5% on weekly plans and 10% on monthly plans.</p>
+
+      <div class="sub-form-wrap">
+        <form id="sub-form">
+          <div id="sub-error" class="error-banner hidden"></div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label data-i18n="sub_plan_label">Choose Subscription Plan *</label>
+              <div class="radio-group">
+                <label class="radio-label">
+                  <input type="radio" name="sub-plan" value="weekly" checked>
+                  <span data-i18n="sub_plan_weekly">Weekly Plan (5% off)</span>
+                </label>
+                <label class="radio-label">
+                  <input type="radio" name="sub-plan" value="monthly">
+                  <span data-i18n="sub_plan_monthly">Monthly Plan (10% off)</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="sub-start-date" data-i18n="sub_start_date">Start Date *</label>
+              <input type="date" id="sub-start-date" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label data-i18n="sub_days_label">Delivery Days of the Week *</label>
+            <div class="days-selector">
+              <label class="day-pill"><input type="checkbox" class="sub-day-cb" value="mon" checked><span data-i18n="sub_day_mon">Mon</span></label>
+              <label class="day-pill"><input type="checkbox" class="sub-day-cb" value="tue"><span data-i18n="sub_day_tue">Tue</span></label>
+              <label class="day-pill"><input type="checkbox" class="sub-day-cb" value="wed" checked><span data-i18n="sub_day_wed">Wed</span></label>
+              <label class="day-pill"><input type="checkbox" class="sub-day-cb" value="thu"><span data-i18n="sub_day_thu">Thu</span></label>
+              <label class="day-pill"><input type="checkbox" class="sub-day-cb" value="fri" checked><span data-i18n="sub_day_fri">Fri</span></label>
+              <label class="day-pill"><input type="checkbox" class="sub-day-cb" value="sat"><span data-i18n="sub_day_sat">Sat</span></label>
+              <label class="day-pill"><input type="checkbox" class="sub-day-cb" value="sun"><span data-i18n="sub_day_sun">Sun</span></label>
+            </div>
+          </div>
+
+          <!-- Lunch Meal Box -->
+          <div class="meal-box">
+            <label class="checkbox-label" style="font-weight: 700; font-size: 1rem;">
+              <input type="checkbox" id="sub-include-lunch" checked>
+              <span data-i18n="sub_lunch_box_label">Include Lunch Meal (11:00 AM – 3:00 PM)</span>
+            </label>
+            <div style="margin-top: 10px;">
+              <label for="sub-lunch-time" data-i18n="sub_lunch_time">Preferred Lunch Delivery Time:</label>
+              <input type="time" id="sub-lunch-time" value="12:30" min="11:00" max="15:00" style="max-width: 180px;">
+            </div>
+            <div style="margin-top: 10px;">
+              <span data-i18n="sub_lunch_dishes">Select 1 to 6 Lunch Dishes (No Alcohol):</span>
+              <div id="sub-lunch-dishes-list" class="dishes-checkbox-grid"></div>
+            </div>
+          </div>
+
+          <!-- Dinner Meal Box -->
+          <div class="meal-box">
+            <label class="checkbox-label" style="font-weight: 700; font-size: 1rem;">
+              <input type="checkbox" id="sub-include-dinner">
+              <span data-i18n="sub_dinner_box_label">Include Dinner Meal (5:00 PM – 10:00 PM)</span>
+            </label>
+            <div style="margin-top: 10px;">
+              <label for="sub-dinner-time" data-i18n="sub_dinner_time">Preferred Dinner Delivery Time:</label>
+              <input type="time" id="sub-dinner-time" value="19:00" min="17:00" max="22:00" style="max-width: 180px;">
+            </div>
+            <div style="margin-top: 10px;">
+              <span data-i18n="sub_dinner_dishes">Select 1 to 6 Dinner Dishes (No Alcohol):</span>
+              <div id="sub-dinner-dishes-list" class="dishes-checkbox-grid"></div>
+            </div>
+          </div>
+
+          <!-- Subscriber Details -->
+          <div class="form-row">
+            <div class="form-group">
+              <label for="sub-first-name" data-i18n="co_first_name">First Name *</label>
+              <input type="text" id="sub-first-name" required maxlength="50">
+            </div>
+            <div class="form-group">
+              <label for="sub-last-name" data-i18n="co_last_name">Last Name *</label>
+              <input type="text" id="sub-last-name" required maxlength="50">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="sub-phone" data-i18n="co_phone">Phone Number *</label>
+              <input type="tel" id="sub-phone" placeholder="e.g. 5707807680" required maxlength="15">
+            </div>
+            <div class="form-group">
+              <label for="sub-email" data-i18n="co_email">Email Address</label>
+              <input type="email" id="sub-email" placeholder="name@example.com">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label data-i18n="co_type_label">Fulfillment Option</label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="sub-fulfillment" value="delivery" checked>
+                <span>Local Doorstep Delivery</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="sub-fulfillment" value="pickup">
+                <span>Pickup at Kitchen</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="sub-street" data-i18n="co_street">Delivery Street Address</label>
+            <input type="text" id="sub-street" placeholder="123 Main St">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="sub-city" data-i18n="co_city">City</label>
+              <input type="text" id="sub-city" value="Carmel">
+            </div>
+            <div class="form-group">
+              <label for="sub-zip" data-i18n="co_zip">ZIP Code</label>
+              <input type="text" id="sub-zip" value="46033" maxlength="5">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label data-i18n="co_payment_label">Payment Preference *</label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="sub-payment" value="Zelle" checked>
+                <span data-i18n="co_payment_zelle">Zelle (aahirahomekitchen@gmail.com)</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="sub-payment" value="Cheque">
+                <span data-i18n="co_payment_cheque">Cheque</span>
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="sub-payment" value="Cash">
+                <span data-i18n="co_payment_cash">Cash</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Subscription Price Estimate -->
+          <div id="sub-estimate" class="sub-summary-box">
+            <h4 data-i18n="sub_estimate_title">Plan Price Summary</h4>
+            <div class="total-row">
+              <span data-i18n="sub_est_base">Standard Total:</span>
+              <span id="sub-est-base">$0.00</span>
+            </div>
+            <div class="total-row">
+              <span data-i18n="sub_est_discount">Plan Savings:</span>
+              <span id="sub-est-discount">-$0.00</span>
+            </div>
+            <div class="total-row grand-total">
+              <span data-i18n="sub_est_total">Estimated Subscription Cost:</span>
+              <span id="sub-est-total">$0.00</span>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width: 100%;" data-i18n="sub_btn_submit">Start Meal Subscription</button>
+        </form>
+
+        <div id="sub-confirmation" class="hidden"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Track Order Section -->
+  <section id="status" class="status-section">
+    <div class="container">
+      <h2 class="section-title" data-i18n="status_title">Track Order or Subscription</h2>
+      <p class="section-subtitle" data-i18n="status_subtitle">Check the live status of your home kitchen order or subscription using your ID.</p>
+
+      <div class="status-form-wrap">
+        <form id="status-form">
+          <div class="status-input-group">
+            <input type="text" id="status-input" placeholder="e.g. AHK-20261117-0001 or AHS-..." required>
+            <button type="submit" class="btn btn-primary" data-i18n="status_btn_check">Check Status</button>
+          </div>
+        </form>
+        <div id="status-result"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Assistant Section -->
+  <section id="assistant" class="assistant-section" aria-labelledby="assistant-heading">
+    <div class="container assistant-wrap">
+      <h2 id="assistant-heading" class="section-title" data-i18n="assistant_title">Ask Aahira - Kitchen AI Assistant</h2>
+      <p class="section-subtitle" data-i18n="assistant_subtitle">Ask questions about authentic dishes, ingredients, spices, diet recommendations, prepare checkout, or manage your cart.</p>
+
+      <div class="pii-warning-banner" data-i18n="assistant_pii_banner">
+        🛡️ <strong>Privacy Protection:</strong> Please do not type personal identifiers like phone numbers, full addresses, or card details into the AI chat.
+      </div>
+      <div id="pii-notice" class="pii-notice-badge hidden" data-i18n="pii_notice_text">
+        Notice: Personal details (such as phone number or address) were detected and safely removed before sending.
+      </div>
+
+      <p id="assistant-status" role="status">Connecting the assistant… If this message stays, the assistant could not load. You can still use the page directly.</p>
+
+      <div id="agent-app">
+        <div data-ns-slot="header"></div>
+        <div class="assistant-panels">
+          <div data-ns-slot="chat"></div>
+          <div data-ns-slot="agents"></div>
+        </div>
+        <div data-ns-slot="settings"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Location Section -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <h2 class="section-title" data-i18n="contact_title">Kitchen Location & Hours</h2>
+      <div class="contact-layout">
+        <div class="contact-details-card">
+          <div class="contact-item">
+            <h4 data-i18n="contact_address_label">Address</h4>
+            <p>3017 Warren Way<br>Carmel, IN 46033, USA</p>
+          </div>
+          <div class="contact-item">
+            <h4 data-i18n="contact_hours_label">Operating Hours</h4>
+            <p>10:00 AM – 10:00 PM Daily<br><small>(Kitchen Time Zone: America/Indiana/Indianapolis)</small></p>
+          </div>
+          <div class="contact-item">
+            <h4 data-i18n="contact_phone_label">Phone</h4>
+            <p><a href="tel:+15707807680">+1 (570) 780-7680</a></p>
+          </div>
+          <div class="contact-item">
+            <h4 data-i18n="contact_email_label">Email</h4>
+            <p><a href="mailto:aahirahomekitchen@gmail.com">aahirahomekitchen@gmail.com</a></p>
+          </div>
+          <div style="margin-top: 24px;">
+            <a id="contact-directions" href="https://www.google.com/maps/dir/?api=1&destination=3017+Warren+Way,+Carmel,+IN+46033" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-i18n="contact_btn_directions">Get Google Maps Directions</a>
+          </div>
+        </div>
+
+        <div class="map-container">
+          <iframe id="contact-map" title="Carmel, Indiana Pickup Map" src="https://www.openstreetmap.org/export/embed.html?bbox=-86.1212002%2C39.9456951%2C-86.1012002%2C39.9656951&amp;layer=mapnik&amp;marker=39.9556951%2C-86.1112002" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; 2026 Aahira Home Kitchen. <span data-i18n="footer_rights">All rights reserved.</span></p>
+      <p class="footer-muted" data-i18n="footer_demo_disclaimer">Built for The Open Agentic Web Challenge. Runs entirely in your browser using client-side AI.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

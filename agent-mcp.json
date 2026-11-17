@@ -1,0 +1,7 @@
+{
+  "protocol": "nsdeploy-agent-mcp/v1",
+  "network": "aahira_kitchen",
+  "front_man": "aahira_assistant",
+  "available": false,
+  "reason": "Static client-side deployment; public MCP facade requires server host."
+}

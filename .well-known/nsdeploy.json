@@ -1,0 +1,18 @@
+{
+  "protocol": "nsdeploy-link/v1",
+  "exports": [
+    {
+      "network": "aahira_kitchen",
+      "front_man": "aahira_assistant",
+      "aliases": [
+        "aahira_kitchen",
+        "aahira_assistant"
+      ],
+      "url": "aahira_kitchen"
+    }
+  ],
+  "imports": [],
+  "link_updates": {
+    "mode": "browser-local"
+  }
+}

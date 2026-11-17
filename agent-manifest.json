@@ -1,0 +1,85 @@
+{
+  "brand": "Aahira Home Kitchen",
+  "networks": [
+    {
+      "name": "aahira_kitchen",
+      "front_man": "aahira_assistant",
+      "hocon": "./aahira_kitchen.network.json",
+      "description": "Explore authentic Indian regional cuisine, check ingredients and allergens, manage your cart, track orders, or setup a weekly meal subscription.",
+      "tags": [
+        "deployed",
+        "nsdeploy"
+      ],
+      "sample_queries": [
+        "What vegetarian dishes do you have in Tamil cuisine?",
+        "I am allergic to nuts and lactose intolerant. What can I eat for dinner?",
+        "Add two Masala Dosas and one Filter Coffee to my cart.",
+        "Suggest a high-protein weekly lunch plan for after my workouts.",
+        "Can I pay by credit card?"
+      ]
+    }
+  ],
+  "llm_router": {
+    "base_url": "https://api.otari.ai/api/v1",
+    "mock": false,
+    "byok_router": "https://api.otari.ai/api/v1"
+  },
+  "allowed_peers": [],
+  "peer_policy": {
+    "mode": "closed",
+    "deny_origins": [],
+    "note": "Aahira Home Kitchen open agentic website."
+  },
+  "agent_mcp": {
+    "protocol": "nsdeploy-agent-mcp/v1",
+    "network": "aahira_kitchen",
+    "front_man": "aahira_assistant",
+    "available": false,
+    "reason": "Static client-side deployment; public MCP facade requires server host."
+  },
+  "theme": {
+    "primary": "#b84214"
+  },
+  "linking": {
+    "protocol": "nsdeploy-link/v1",
+    "exports": [
+      {
+        "network": "aahira_kitchen",
+        "front_man": "aahira_assistant",
+        "aliases": [
+          "aahira_kitchen",
+          "aahira_assistant"
+        ],
+        "url": "aahira_kitchen"
+      }
+    ],
+    "imports": [],
+    "link_updates": {
+      "mode": "browser-local"
+    }
+  },
+  "deployment": {
+    "mode": "static",
+    "self_contained_runtime": true,
+    "browser_mock": false,
+    "direct_byok": true,
+    "direct_mcp_requires_cors": true,
+    "public_mcp_facade": false
+  },
+  "actions": {
+    "version": 1,
+    "module": "./site-actions.js",
+    "bridge": "./bridge/action-bridge.html",
+    "agentTools": [
+      "get_kitchen_info",
+      "get_menu",
+      "get_cart",
+      "add_to_cart",
+      "set_cart_quantities",
+      "prepare_checkout",
+      "prefill_subscription",
+      "check_order_status",
+      "set_language"
+    ]
+  }
+}

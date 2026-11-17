@@ -1,0 +1,67 @@
+{
+  "name": "Aahira Home Kitchen",
+  "tagline": "Homestyle Indian Cooking Delivered with Love",
+  "demoNotice": "Demo website (the kitchen is not open yet). Orders and subscriptions placed here run in demo mode unless connected to Google Sheets.",
+  "address": {
+    "line1": "3017 Warren Way",
+    "city": "Carmel",
+    "state": "IN",
+    "zip": "46033",
+    "country": "USA"
+  },
+  "location": {
+    "lat": 39.9556951,
+    "lng": -86.1112002
+  },
+  "phone": "+1 (570) 780-7680",
+  "email": "aahirahomekitchen@gmail.com",
+  "timezone": "America/Indiana/Indianapolis",
+  "hours": {
+    "open": "10:00",
+    "close": "22:00"
+  },
+  "leadTimeHours": 2,
+  "slotMinutes": 30,
+  "advanceDays": 14,
+  "delivery": {
+    "fee": 4.99,
+    "freeOver": 50
+  },
+  "drinkingAge": 21,
+  "payment": {
+    "methods": [
+      "Cash",
+      "Cheque",
+      "Zelle"
+    ],
+    "zelleRecipient": "aahirahomekitchen@gmail.com",
+    "chequePayableTo": "Aahira Home Kitchen"
+  },
+  "subscription": {
+    "plans": {
+      "weekly": {
+        "name": "Weekly (5% off)",
+        "discountPercent": 5,
+        "discount": 0.05,
+        "weeks": 1
+      },
+      "monthly": {
+        "name": "Monthly (4 weeks, 10% off)",
+        "discountPercent": 10,
+        "discount": 0.10,
+        "weeks": 4
+      }
+    },
+    "lunchWindow": {
+      "start": "11:00",
+      "end": "15:00"
+    },
+    "dinnerWindow": {
+      "start": "17:00",
+      "end": "22:00"
+    },
+    "minDishesPerMeal": 1,
+    "maxDishesPerMeal": 6
+  },
+  "orderEndpoint": ""
+}

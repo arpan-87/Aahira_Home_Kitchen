@@ -1,0 +1,15 @@
+{
+  "name": "aahira-home-kitchen",
+  "version": "1.0.0",
+  "description": "An Open Agentic Website for Aahira Home Kitchen",
+  "type": "module",
+  "scripts": {
+    "build:menu": "node tools/build-menu.mjs",
+    "build:network": "node tools/build_network.mjs aahira_kitchen.hocon --manifest agent-manifest.json",
+    "serve": "node tools/serve_site.mjs . --port 8080",
+    "test": "node tools/test-suite.mjs"
+  },
+  "devDependencies": {
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.3/xlsx-0.20.3.tgz"
+  }
+}
